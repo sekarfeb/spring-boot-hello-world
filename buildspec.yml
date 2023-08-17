@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk11
+    commands:
+      - echo "Installing dependencies..."
+
+  pre_build:
+    commands:
+      - echo "Running pre-build steps..."
+
+  build:
+    commands:
+      - mvn clean install
+
+artifacts:
+  files:
+    - target/*.jar
